@@ -8,8 +8,6 @@ You can change **Prefix** using command `prefix`.
 Default **prefix** -   
 Example: `/kick` *member* *reason*
 
-===
-
 - ### `mute` *member* *reason*
 Mute user on server for a while.  
 **Время** по умолчанию - *10 минут*
