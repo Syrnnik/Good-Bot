@@ -1,17 +1,21 @@
 # Good BOT
+Bot description
 
 
 ## Commands
-В начале каждой команды пишется **префикс**.
-Сам **префик** можно можно изменить командой `prefix`.
-**Префикс** по умолчанию - 
+All commands starts with **prefix**.  
+You can change **Prefix** using command `prefix`.
+Default **prefix** -   
+Example: `/kick` *member* *reason*
 
-### `mute`
-Заглушить пользователя на время на сервере.
+===
+
+- ### `mute` *member* *reason*
+Mute user on server for a while.  
 **Время** по умолчанию - *10 минут*
 
-### `ban`
-Забанить пользователя на сервере.
+- ### `kick` *member* *reason*
+Kick user from server.
 
-### `kick`
-Выгнать пользователя с сервера.
+- ### `ban` *member* *reason*
+Ban user on server.
