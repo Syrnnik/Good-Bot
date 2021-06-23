@@ -56,7 +56,7 @@ bot.on('message', (msg) => {
         // Check user for necessary permissions
         if (msg.member.hasPermission('ADMINISTRATOR') || msg.member.hasPermission('MANAGE_ROLES')) {
             console.log(`${member.displayName} was muted by ${msg.member.displayName} for ${time} minutes.`)
-            //! member.roles.add(muteRole)
+            member.roles.add(muteRole)
         }
     }
 
@@ -77,7 +77,7 @@ bot.on('message', (msg) => {
         // Check user for necessary permissions
         if (msg.member.hasPermission('ADMINISTRATOR') || msg.member.hasPermission('KICK_MEMBERS')) {
             console.log(`${member.displayName} was kicked by ${msg.member.displayName}.`)
-            //! member.kick(reason)
+            member.kick(reason)
         }
     }
 
@@ -98,7 +98,7 @@ bot.on('message', (msg) => {
         // Check user for necessary permissions
         if (msg.member.hasPermission('ADMINISTRATOR') || msg.member.hasPermission('BAN_MEMBERS')) {
             console.log(`${member.displayName} was banned by ${msg.member.displayName}.`)
-            //! member.ban(reason)
+            member.ban(reason)
         }
     }
 
