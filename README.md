@@ -7,7 +7,7 @@ All commands starts with **prefix**. Default **prefix** - !
 You can change **prefix** using command `prefix`.
 
 - #### `mute` `<member>` `<time>` `[reason]` - **mute** user on server for a while.  
--- Default **time** - *10 minutes*  
+- - Default **time** - *10 minutes*  
 + Default **reason** - *"Because \<message author\> wants."*
 
 - ### `<prefix>kick` `<member>` `[reason]`
