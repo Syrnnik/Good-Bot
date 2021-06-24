@@ -6,7 +6,8 @@ Bot description
 All commands starts with **prefix**. Default **prefix** - !  
 You can change **prefix** using command `prefix`.
 
-#### `mute` `<member>` `<time>` `[reason]`
+### Mute
+#### Syntax: `mute` `<member>` `<time>` `[reason]`
 Mute user on server for a while.  
 - **`<member>`** - **member mention** which user will be muted.  
 - **`<time>`** - **time** for which user will be muted. Default **time** - *10 minutes*  
