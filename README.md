@@ -4,7 +4,7 @@ Bot description
 
 ## Commands
 All commands starts with **prefix**.  
-You can change **Prefix** using command `prefix`.
+You can change **prefix** using command `prefix`.
 Default **prefix** - !  
 Command using example: `/kick` *member* *reason*
 
@@ -13,7 +13,7 @@ Command using example: `/kick` *member* *reason*
 - ### `mute` `<member>` `<time>` `[reason]`
 **Mute** user on server for a while.  
 Default **time** - *10 minutes*  
-Default **reason** - *"Because <message author> wants."*
+Default **reason** - *"Because \<message author\> wants."*
 
 - ### `kick` *member* *reason*
 **Kick** user from server.  
