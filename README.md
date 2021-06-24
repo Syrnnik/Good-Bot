@@ -16,6 +16,7 @@ You can change **prefix** using command `prefix`.
 	- **`<member>`** - **member mention** which user will be kicked.  
 	- **`[reason]`** - **reason** why user was kicked. Default **reason** - *"Because \<message author\> wants."*
 
-- #### `ban` `<member>` `[reason]` - ban user on server.  
+- #### `ban` `<member>` `[reason]`
+	> Ban user on server.  
     - **`<member>`** - **member mention** which user will be muted.  
 	- **`[reason]`** - **reason** why user was banned. Default **reason** - *"Because \<message author\> wants."*
