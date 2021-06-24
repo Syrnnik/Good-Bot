@@ -53,7 +53,7 @@ bot.on('message', (msg) => {
 
         reason = msg.content.split('"')[1]
         // Some informative reason
-        if (!reason) reason = `Because ${msg.member} wants.`
+        if (!reason) reason = `Because ${msg.member} wants`
 
         // Check user for necessary permissions
         if (msg.member.hasPermission('ADMINISTRATOR')/* || msg.member.hasPermission('MANAGE_ROLES')*/) {
@@ -95,7 +95,7 @@ bot.on('message', (msg) => {
 
         reason = msg.content.split('"')[1]
         // Some informative reason
-        if (!reason) reason = `Because ${msg.member} wants.`
+        if (!reason) reason = `Because ${msg.member} wants`
 
         // Check user for necessary permissions
         if (msg.member.hasPermission('ADMINISTRATOR') || msg.member.hasPermission('KICK_MEMBERS')) {
@@ -122,7 +122,7 @@ bot.on('message', (msg) => {
 
         reason = msg.content.split('"')[1]
         // Some informative reason
-        if (!reason) reason = `Because ${msg.member} wants.`
+        if (!reason) reason = `Because ${msg.member} wants`
 
         // Check user for necessary permissions
         if (msg.member.hasPermission('ADMINISTRATOR') || msg.member.hasPermission('BAN_MEMBERS')) {
