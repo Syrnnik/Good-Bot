@@ -15,7 +15,7 @@ Command using example: `/kick` *member* *reason*
 Default **time** - *10 minutes*  
 Default **reason** - *"Because \<message author\> wants."*
 
-- ### `kick` *member* *reason*
+- ### `<prefix>kick` `<member>` `[reason]`
 **Kick** user from server.  
 
 - ### `ban` *member* *reason*
