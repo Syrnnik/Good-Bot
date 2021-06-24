@@ -10,9 +10,10 @@ Command using example: `/kick` *member* *reason*
 
 ---
 
-- ### `mute` *member* *time* *reason*
+- ### `mute` `<member>` `<time>` `[reason]`
 **Mute** user on server for a while.  
-Default **time** - *10 minutes*
+Default **time** - *10 minutes*  
+Default **reason** - *"Because <message author> wants."*
 
 - ### `kick` *member* *reason*
 **Kick** user from server.  
