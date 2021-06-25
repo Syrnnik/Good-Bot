@@ -1,5 +1,5 @@
-const discord = require('discord.js')
-const bot = new discord.Client()
+const Discord = require('discord.js')
+const bot = new Discord.Client()
 let config = require('./botConf.json')
 let token = config.token
 let prefix = config.prefix
@@ -9,6 +9,7 @@ let prefix = config.prefix
 bot.on('ready', () => {
     console.log(`${bot.user.username} is ready!!`)
 })
+
 
 // OnMessage Event
 // Bot get message from user
@@ -55,11 +56,11 @@ bot.on('message', (msg) => {
         // Some informative reason
         if (!reason) reason = `Because ${msg.member} wants`
 
-        // Check user for necessary permissions
-        if (msg.member.hasPermission('ADMINISTRATOR')/* || msg.member.hasPermission('MANAGE_ROLES')*/) {
+        // Check user permissions
+        if (msg.member.hasPermission('ADMINISTRATOR') /* || msg.member.hasPermission('MANAGE_ROLES')*/ ) {
             console.log(`${member.displayName} was muted by ${msg.member.displayName} for ${time} minutes.`)
             member.roles.add(muteRole)
-            setTimeout(() => member.roles.remove(muteRole), time*60*1000)
+            setTimeout(() => member.roles.remove(muteRole), time * 60 * 1000)
             msg.channel.send(`${member} was muted by ${msg.member} for ${time} minutes.\nReason: ${reason}`)
         }
     }
@@ -74,8 +75,8 @@ bot.on('message', (msg) => {
         else if (member.size > 1) return msg.channel.send(`You need to mention only one member in command.`)
         member = member.first()
 
-        // Check user for necessary permissions
-        if (msg.member.hasPermission('ADMINISTRATOR')/* || msg.member.hasPermission('MANAGE_ROLES') */) {
+        // Check user permissions
+        if (msg.member.hasPermission('ADMINISTRATOR') /* || msg.member.hasPermission('MANAGE_ROLES') */ ) {
             console.log(`${member.displayName} was unmuted by ${msg.member.displayName}.`)
             member.roles.remove(muteRole)
             msg.channel.send(`${member} was unmuted by ${msg.member}.`)
@@ -97,7 +98,7 @@ bot.on('message', (msg) => {
         // Some informative reason
         if (!reason) reason = `Because ${msg.member} wants`
 
-        // Check user for necessary permissions
+        // Check user permissions
         if (msg.member.hasPermission('ADMINISTRATOR') || msg.member.hasPermission('KICK_MEMBERS')) {
             console.log(`${member.displayName} was kicked by ${msg.member.displayName}.`)
             member.kick(reason)
@@ -124,11 +125,63 @@ bot.on('message', (msg) => {
         // Some informative reason
         if (!reason) reason = `Because ${msg.member} wants`
 
-        // Check user for necessary permissions
+        // Check user permissions
         if (msg.member.hasPermission('ADMINISTRATOR') || msg.member.hasPermission('BAN_MEMBERS')) {
             console.log(`${member.displayName} was banned by ${msg.member.displayName}.`)
-            member.ban({ days: time, reason: reason })
+            member.ban({
+                days: time,
+                reason: reason
+            })
             msg.channel.send(`${member} was banned by ${msg.member}.\nReason: ${reason}.`)
+        }
+    }
+
+
+    // Help menu
+    if (msg.content.startsWith(prefix + "help")) {
+
+        command = msg.content.split(' ')[1]
+
+        // Help menu patterns
+        helpMenu = new Discord.MessageEmbed()
+            .setAuthor(`Help menu for ${command} command`, bot.user.avatarURL())
+
+        // Check user permissions
+        if (msg.member.hasPermission('ADMINISTRATOR') || msg.member.hasPermission('BAN_MEMBERS')) {
+            // Help menu for '/mute' command
+            if (command == 'mute') {
+                helpMenu.setColor('GRAY')
+                helpMenu.addField('/mute <member> <time> [reason]', 'Mute member on server for a while.')
+            }
+            // Help menu for '/unmute' command
+            else if (command == 'unmute') {
+                helpMenu.setColor('BLUE')
+                helpMenu.addField('/unmute <member>', 'Unmute member on server.')
+            }
+            // Help menu for '/kick' command
+            else if (command == 'kick') {
+                helpMenu.setColor('GREEN')
+                helpMenu.addField('/kick <member> [reason]', 'Kick member from server.')
+            }
+            // Help menu for '/mute' command
+            else if (command == 'ban') {
+                helpMenu.setColor('RED')
+                helpMenu.addField('/ban <member> [reason]', 'Ban member on server.')
+            }
+            // Help menu for '/ban' command
+            else if (!command) {
+                helpMenu.setAuthor('Help menu for all commands', bot.user.avatarURL())
+                helpMenu.setColor('WHITE')
+                helpMenu.addField('/mute <member> <time> [reason]', 'Mute member on server for a while.')
+                helpMenu.addField('/unmute <member>', 'Unmute member on server.')
+                helpMenu.addField('/kick <member> [reason]', 'Kick member from server.')
+                helpMenu.addField('/ban <member> [reason]', 'Ban member on server.')
+            }
+            // Unknown command for help menu
+            else helpMenu = `Unknown command: \`${command}\`.`
+            helpMenu.addField('/help [command]', 'Help menu for commands.')
+
+            msg.channel.send(helpMenu)
         }
     }
 
