@@ -27,3 +27,4 @@ All commands starts with **prefix**. Default **prefix** - `/`.
 ## Help menu for commands
 #### `/help` `[command]`
 - **`[command]`** - **command** which **help menu** needs. If **command** is not entered, it will show **help menu** for *all commands*.
+=======
