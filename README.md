@@ -23,3 +23,8 @@ All commands starts with **prefix**. Default **prefix** - `/`.
 #### `/ban` `<member>` `"[reason]"`
 - **`<member>`** - **member mention** which **member** will be banned.  
 - **`[reason]`** - **reason** why **member** was banned. Default **reason** - *"Because \<message author\> wants"*.
+
+## Help menu for commands
+#### `/help` `[command]`
+- **`[command]`** - **command** which **help menu** needs. If **command** is not entered, it will show **help menu** for *all commands*.
+=======
